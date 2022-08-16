@@ -18,32 +18,35 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var questions = [
-      'what\'s your favorite color?',
+      'what\'s your favorite color?',// "\" back slash apostrophe
       'what\'s your favorite animal?',
-    ];
+    ]; // semicolon is important
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
           title: Text("My First App"),
         ),
-        body: Column(
+        body: Column( //Column or Row
           children: [
             Text('The Question!'),
             RaisedButton(
               child: Text('Answer 1'),
-              onPressed: answerQuestion,
+              onPressed: answerQuestion, // don't use parentheses
             ),
             RaisedButton(
               child: Text('Answer 2'),
-              onPressed: answerQuestion,
+              onPressed: () => print('Answer 2 Chosen!'),
             ),
             RaisedButton(
               child: Text('Answer 3'),
-              onPressed: answerQuestion,
+              onPressed: () {
+                //...Anonymous Functions
+                print('Answer 3 Chosen!');
+              },
             ),
           ],
         ),
       ),
-    );
+    );// Semicolon
   }
 }
