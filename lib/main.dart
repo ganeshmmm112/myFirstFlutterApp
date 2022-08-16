@@ -11,14 +11,17 @@ import 'package:flutter/material.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  //class wide variable
+  var questionIndex = 0;
   void answerQuestion() {
-    print('Answer Chosen!');
+    questionIndex += 1;
+    print(questionIndex);
   }
 
   @override
   Widget build(BuildContext context) {
     var questions = [
-      'what\'s your favorite color?',// "\" back slash apostrophe
+      'what\'s your favorite color?', // "\" back slash apostrophe
       'what\'s your favorite animal?',
     ]; // semicolon is important
     return MaterialApp(
@@ -26,9 +29,13 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text("My First App"),
         ),
-        body: Column( //Column or Row
+        body: Column(
+          //Column or Row
           children: [
-            Text('The Question!'),
+            //questions.elementAt(0) or questions[0]
+            Text(
+              questions[questionIndex],
+            ),
             RaisedButton(
               child: Text('Answer 1'),
               onPressed: answerQuestion, // don't use parentheses
@@ -47,6 +54,6 @@ class MyApp extends StatelessWidget {
           ],
         ),
       ),
-    );// Semicolon
+    ); // Semicolon
   }
 }
