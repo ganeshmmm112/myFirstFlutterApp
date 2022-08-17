@@ -14,19 +14,19 @@ class MyApp extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
-    return MyAppState();
+    return _MyAppState();// underscore tends to private
   }
 }
 
-class MyAppState extends State<MyApp>{
+class _MyAppState extends State<MyApp>{
   //class wide variable
-  var questionIndex = 0;
+  var _questionIndex = 0;
 
-  void answerQuestion() {
+  void _answerQuestion() {
     setState(() {
-       questionIndex += 1;
+       _questionIndex += 1;
     });
-    print(questionIndex);
+    print(_questionIndex);
   }
 
   @override
@@ -45,11 +45,11 @@ class MyAppState extends State<MyApp>{
           children: [
             //questions.elementAt(0) or questions[0]
             Text(
-              questions[questionIndex],
+              questions[_questionIndex],
             ),
             RaisedButton(
               child: Text('Answer 1'),
-              onPressed: answerQuestion, // don't use parentheses
+              onPressed: _answerQuestion, // don't use parentheses
             ),
             RaisedButton(
               child: Text('Answer 2'),
