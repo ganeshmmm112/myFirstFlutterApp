@@ -3,6 +3,7 @@
 //file   : lib/main.dart
 
 import 'package:flutter/material.dart';
+import './question.dart';
 
 // void main(){
 //   runApp(MyApp());
@@ -44,7 +45,7 @@ class _MyAppState extends State<MyApp>{
           //Column or Row
           children: [
             //questions.elementAt(0) or questions[0]
-            Text(
+            Question(
               questions[_questionIndex],
             ),
             RaisedButton(
