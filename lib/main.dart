@@ -34,8 +34,20 @@ class _MyAppState extends State<MyApp>{
   @override
   Widget build(BuildContext context) {
     var questions = [
-      'what\'s your favorite color?', // "\" back slash apostrophe
-      'what\'s your favorite animal?',
+      {
+        'questionText' : 'what\'s your favorite color?',
+        'answers' : ['Black', 'Red', 'Green', 'White'],
+      },
+      {
+        'questionText' : 'what\'s your favorite animal?',
+        'answers' : ['Rabbit', 'Snake', 'Elephant', 'Lion'],
+      },
+      {
+        'questionText' : 'who\'s your favorite instructor?',
+        'answers' : ['Ganesh', 'Kumar', 'Agnesh', 'Genie'],
+      },
+      // "\" back slash apostrophe
+      
     ]; // semicolon is important
     return MaterialApp(
       home: Scaffold(
