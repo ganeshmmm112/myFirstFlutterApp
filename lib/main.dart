@@ -59,11 +59,13 @@ class _MyAppState extends State<MyApp>{
           children: [
             //questions.elementAt(0) or questions[0]
             Question(
-              questions[_questionIndex],
+              questions[_questionIndex]['questionText'],
             ),
-            Answer(_answerQuestion),
-            Answer(_answerQuestion),
-            Answer(_answerQuestion),
+            // Spread Operator...
+            ...(questions[_questionIndex]['answers'] as List<String>)
+              .map((answer) {
+                return Answer(_answerQuestion, answer);
+            }).toList()
           ],
         ),
       ),
